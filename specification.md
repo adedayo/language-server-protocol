@@ -29,10 +29,10 @@ immediately precede the content part of a message.
 
 Currently the following header fields are supported:
 
-| Header Field Name | Value Type  | Description |
-|:------------------|:------------|:------------|
-| Content-Length    | number      | The length of the content part in bytes. This header is required. |
-| Content-Type      | string      | The mime type of the content part. Defaults to application/vscode-jsonrpc; charset=utf-8 |
+| Header Field Name | Value Type | Description                                                                              |
+| :---------------- | :--------- | :--------------------------------------------------------------------------------------- |
+| Content-Length    | number     | The length of the content part in bytes. This header is required.                        |
+| Content-Type      | string     | The mime type of the content part. Defaults to application/vscode-jsonrpc; charset=utf-8 |
 {: .table .table-bordered .table-responsive}
 
 The header part is encoded using the 'ascii' encoding. This includes the '\r\n' separating the header and content part.
@@ -751,63 +751,63 @@ interface TextDocumentItem {
 
 Text documents have a language identifier to identify a document on the server side when it handles more than one language to avoid re-interpreting the file extension. If a document refers to one of the programming languages listed below it is recommended that clients use those ids.
 
-Language | Identifier
--------- | ----------
-ABAP | `abap`
-Windows Bat | `bat`
-BibTeX | `bibtex`
-Clojure | `clojure`
-Coffeescript | `coffeescript`
-C | `c`
-C++ | `cpp`
-C# | `csharp`
-CSS | `css`
-Diff | `diff`
-Dart | `dart`
-Dockerfile | `dockerfile`
-Elixir | `elixir`
-Erlang | `erlang`
-F# | `fsharp`
-Git | `git-commit` and `git-rebase`
-Go | `go`
-Groovy | `groovy`
-Handlebars | `handlebars`
-HTML | `html`
-Ini | `ini`
-Java | `java`
-JavaScript | `javascript`
-JavaScript React | `javascriptreact`
-JSON | `json`
-LaTeX | `latex`
-Less | `less`
-Lua | `lua`
-Makefile | `makefile`
-Markdown | `markdown`
-Objective-C | `objective-c`
-Objective-C++ | `objective-cpp`
-Perl | `perl`
-Perl 6 | `perl6`
-PHP | `php`
-Powershell | `powershell`
-Pug | `jade`
-Python | `python`
-R | `r`
-Razor (cshtml) | `razor`
-Ruby | `ruby`
-Rust | `rust`
-SCSS | `scss` (syntax using curly brackets), `sass` (indented syntax)
-Scala | `scala`
-ShaderLab | `shaderlab`
-Shell Script (Bash) | `shellscript`
-SQL | `sql`
-Swift | `swift`
-TypeScript | `typescript`
-TypeScript React| `typescriptreact`
-TeX | `tex`
-Visual Basic | `vb`
-XML | `xml`
-XSL | `xsl`
-YAML | `yaml`
+| Language            | Identifier                                                     |
+| ------------------- | -------------------------------------------------------------- |
+| ABAP                | `abap`                                                         |
+| Windows Bat         | `bat`                                                          |
+| BibTeX              | `bibtex`                                                       |
+| Clojure             | `clojure`                                                      |
+| Coffeescript        | `coffeescript`                                                 |
+| C                   | `c`                                                            |
+| C++                 | `cpp`                                                          |
+| C#                  | `csharp`                                                       |
+| CSS                 | `css`                                                          |
+| Diff                | `diff`                                                         |
+| Dart                | `dart`                                                         |
+| Dockerfile          | `dockerfile`                                                   |
+| Elixir              | `elixir`                                                       |
+| Erlang              | `erlang`                                                       |
+| F#                  | `fsharp`                                                       |
+| Git                 | `git-commit` and `git-rebase`                                  |
+| Go                  | `go`                                                           |
+| Groovy              | `groovy`                                                       |
+| Handlebars          | `handlebars`                                                   |
+| HTML                | `html`                                                         |
+| Ini                 | `ini`                                                          |
+| Java                | `java`                                                         |
+| JavaScript          | `javascript`                                                   |
+| JavaScript React    | `javascriptreact`                                              |
+| JSON                | `json`                                                         |
+| LaTeX               | `latex`                                                        |
+| Less                | `less`                                                         |
+| Lua                 | `lua`                                                          |
+| Makefile            | `makefile`                                                     |
+| Markdown            | `markdown`                                                     |
+| Objective-C         | `objective-c`                                                  |
+| Objective-C++       | `objective-cpp`                                                |
+| Perl                | `perl`                                                         |
+| Perl 6              | `perl6`                                                        |
+| PHP                 | `php`                                                          |
+| Powershell          | `powershell`                                                   |
+| Pug                 | `jade`                                                         |
+| Python              | `python`                                                       |
+| R                   | `r`                                                            |
+| Razor (cshtml)      | `razor`                                                        |
+| Ruby                | `ruby`                                                         |
+| Rust                | `rust`                                                         |
+| SCSS                | `scss` (syntax using curly brackets), `sass` (indented syntax) |
+| Scala               | `scala`                                                        |
+| ShaderLab           | `shaderlab`                                                    |
+| Shell Script (Bash) | `shellscript`                                                  |
+| SQL                 | `sql`                                                          |
+| Swift               | `swift`                                                        |
+| TypeScript          | `typescript`                                                   |
+| TypeScript React    | `typescriptreact`                                              |
+| TeX                 | `tex`                                                          |
+| Visual Basic        | `vb`                                                           |
+| XML                 | `xml`                                                          |
+| XSL                 | `xsl`                                                          |
+| YAML                | `yaml`                                                         |
 {: .table .table-bordered .table-responsive}
 
 #### <a href="#versionedTextDocumentIdentifier" name="versionedTextDocumentIdentifier" class="anchor"> VersionedTextDocumentIdentifier </a>
@@ -1692,13 +1692,6 @@ interface ServerCapabilities {
 	 * `prepareSupport` in its initial `initialize` request.
 	 */
 	renameProvider?: boolean | RenameOptions;
-
-	/**
-	 * The server provides folding provider support.
-	 *
-	 * @since 3.10.0
-	 */
-	foldingRangeProvider?: boolean | FoldingRangeOptions | FoldingRangeRegistrationOptions;
 
 	/**
 	 * The server provides folding provider support.
